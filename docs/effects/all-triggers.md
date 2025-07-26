@@ -34,7 +34,9 @@ Triggers can also produce a `value`, and some produce an `alt-value`, you can re
 | `change_world`                  | Triggered when changing world                                                                                     | `value: 1`                                             |
 | `click_block`                   | Triggered when right-clicking on a block                                                                          | `value: 1`                                             |
 | `click_entity`                  | Triggered when right-clicking on an entity                                                                        | `value: 1`                                             |
+| `collide_with_entity`           | Triggered when colliding with another entity.                                                                     | `value: 1`                                             |
 | `complete_advancement`          | Triggered when completing an advancement                                                                          | `value: 1`                                             |
+| `compost_item`                  | Triggered when putting items in a composter **Requires Paper**                                                    | `value: 1`<br/>`alt-value: 1 (If level increases)`     |
 | `consume`                       | Triggered on item consumption                                                                                     | `value: 1`                                             |
 | `craft`                         | Triggered when crafting an item                                                                                   | `value: The amount of items crafted`                   |
 | `damage_item`                   | Triggered when damaging an item                                                                                   | `value: The damage`                                    |
@@ -138,42 +140,42 @@ Triggers can also produce a `value`, and some produce an `alt-value`, you can re
 | `regen_magic`    | Triggered when regenerating magic                                    | EcoSkills   | `value: 1`                     |
 ## External Integration Triggers
 
-| ID                         | Description                                            | Plugin                           | Value(s)                                                     |
-| -------------------------- | ------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------ |
-| `collect_envoy`            | Triggered when collecting an envoy crate               | AxEnvoy                          | `value: 1`                                                   |
-| `player_trade`             | Triggered when trading with a player                   | AxTrade                          | `value: The total amount of items traded`                    |
-| `left_click_npc`           | Triggered when left-clicking an NPC                    | Citizens<br/>FancyNpcs            | `value: 1`                                                   |
-| `right_click_npc`          | Triggered when right-clicking an NPC                   | Citizens<br/>FancyNpcs            | `value: 1`                                                   |
-| `bonemeal_crop`            | Triggered when using bonemeal on a crop                | CustomCrops                      | `value: 1`                                                   |
-| `harvest_custom_crop`      | Triggered when harvesting a custom crop                | CustomCrops                      | `value: 1`                                                   |
-| `plant_custom_crop`        | Triggered when planting a custom crop                  | CustomCrops                      | `value: 1`                                                   |
-| `use_fertilizer`           | Triggered when using fertilizer                        | CustomCrops                      | `value: 1`                                                   |
-| `use_watering_can`         | Triggered when using a watering can                    | CustomCrops                      | `value: 1`                                                   |
-| `change_town_role`         | Triggered when changing town role                      | HuskTowns                        | `value: 1`                                                   |
-| `create_town`              | Triggered when creating a Town                         | HuskTowns                        | `value: 1`                                                   |
-| `disband_town`             | Triggered when disbanding a Town                       | HuskTowns                        | `value: 1`                                                   |
-| `join_town`                | Triggered when joining a Town                          | HuskTowns                        | `value: 1`                                                   |
-| `leave_town`               | Triggered when leaving a Town                          | HuskTowns                        | `value: 1`                                                   |
-| `enter_claim`              | Triggered when entering a claimed area                 | HuskTowns<br/>HuskClaims          | `value: 1`                                                   |
-| `claim`                    | Triggered when claiming an area                        | HuskTowns<br/>HuskClaims<br/>Lands | `value: 1`                                                   |
-| `exit_claim`               | Triggered when exiting a claimed area                  | HuskTowns<br/>HuskClaims<br/>Lands | `value: 1`                                                   |
-| `unclaim`                  | Triggered when unclaiming an area                      | HuskTowns<br/>HuskClaims<br/>Lands | `value: 1`                                                   |
-| `jobs_level_up`            | Triggered when levelling up a job                      | Jobs Reborn                      | `value: The new level`                                       |
-| `join_land`                | Triggered when joining a Land                          | Lands                            | `value: 1`                                                   |
-| `lands_bank_deposit`       | Triggered when depositing into the Lands bank          | Lands                            | `value: The value deposited`<br/>`alt-value: The new balance` |
-| `lands_bank_withdraw`      | Triggered when withdrawing from the Lands bank         | Lands                            | `value: The value withdrawn`<br/>`alt-value: The new balance` |
-| `lands_spawn_teleport`     | Triggered when teleporting to Lands spawn              | Lands                            | `value: 1`                                                   |
-| `gain_mcmmo_xp`            | Triggered when gaining McMMO xp                        | McMMO                            | `value: The xp gained`                                       |
-| `level_down_mcmmo`         | Triggered when levelling down McMMO skill              | McMMO                            | `value: The new level`                                       |
-| `level_up_mcmmo`           | Triggered when levelling up McMMO skill                | McMMO                            | `value: The new level`                                       |
-| `mcmmo_ability_activate`   | Triggered when an McMMO ability is activated           | McMMO                            | `value: 1`                                                   |
-| `mcmmo_ability_deactivate` | Triggered when an McMMO ability is deactivated         | McMMO                            | `value: 1`                                                   |
-| `scyther_auto_collect`     | Triggered when autocollecting crops with a scyther hoe | Scyther                          | `value: 1`                                                   |
-| `scyther_auto_sell`        | Triggered when autoselling crops with a scyther hoe    | Scyther                          | `value: 1`                                                   |
-| `register_vote`            | Triggered when a player votes for the server           | Votifier                         | `value: 1`                                                   |
-| `enter_region`             | Triggered when entering a region                       | WorldGuard                       | `value: 1`                                                   |
-| `leave_region`             | Triggered when leaving a region                        | WorldGuard                       | `value: 1`                                                   |
-| `claim_battlepass_reward`  | Triggered when claiming a battlepass reward            | xBattlepass                      | `value: 1`                                                   |
-| `complete_battlepass_task` | Triggered when completing a battlepass task            | xBattlepass                      | `value: 1`                                                   |
-| `gain_battlepass_xp`       | Triggered when gaining battlepass XP                   | xBattlepass                      | `value: The experience gained`                               |
-| `tier_up_battlepass`       | Triggered when tiering up the battlepass               | xBattlepass                      | `value: The new level`                                       |
+| ID                         | Description                                            | Plugin                             | Value(s)                                                                                        |
+| -------------------------- | ------------------------------------------------------ | ---------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `collect_envoy`            | Triggered when collecting an envoy crate               | AxEnvoy                            | `value: 1`                                                                                      |
+| `player_trade`             | Triggered when trading with a player                   | AxTrade                            | `value: The total amount of items traded` <br/>`alt-value: The total amount of currency traded` |
+| `left_click_npc`           | Triggered when left-clicking an NPC                    | Citizens<br/>FancyNpcs             | `value: 1`                                                                                      |
+| `right_click_npc`          | Triggered when right-clicking an NPC                   | Citizens<br/>FancyNpcs             | `value: 1`                                                                                      |
+| `bonemeal_crop`            | Triggered when using bonemeal on a crop                | CustomCrops                        | `value: 1`                                                                                      |
+| `harvest_custom_crop`      | Triggered when harvesting a custom crop                | CustomCrops                        | `value: 1`                                                                                      |
+| `plant_custom_crop`        | Triggered when planting a custom crop                  | CustomCrops                        | `value: 1`                                                                                      |
+| `use_fertilizer`           | Triggered when using fertilizer                        | CustomCrops                        | `value: 1`                                                                                      |
+| `use_watering_can`         | Triggered when using a watering can                    | CustomCrops                        | `value: 1`                                                                                      |
+| `change_town_role`         | Triggered when changing town role                      | HuskTowns                          | `value: 1`                                                                                      |
+| `create_town`              | Triggered when creating a Town                         | HuskTowns                          | `value: 1`                                                                                      |
+| `disband_town`             | Triggered when disbanding a Town                       | HuskTowns                          | `value: 1`                                                                                      |
+| `join_town`                | Triggered when joining a Town                          | HuskTowns                          | `value: 1`                                                                                      |
+| `leave_town`               | Triggered when leaving a Town                          | HuskTowns                          | `value: 1`                                                                                      |
+| `enter_claim`              | Triggered when entering a claimed area                 | HuskTowns<br/>HuskClaims           | `value: 1`                                                                                      |
+| `claim`                    | Triggered when claiming an area                        | HuskTowns<br/>HuskClaims<br/>Lands | `value: 1`                                                                                      |
+| `exit_claim`               | Triggered when exiting a claimed area                  | HuskTowns<br/>HuskClaims<br/>Lands | `value: 1`                                                                                      |
+| `unclaim`                  | Triggered when unclaiming an area                      | HuskTowns<br/>HuskClaims<br/>Lands | `value: 1`                                                                                      |
+| `jobs_level_up`            | Triggered when levelling up a job                      | Jobs Reborn                        | `value: The new level`                                                                          |
+| `join_land`                | Triggered when joining a Land                          | Lands                              | `value: 1`                                                                                      |
+| `lands_bank_deposit`       | Triggered when depositing into the Lands bank          | Lands                              | `value: The value deposited`<br/>`alt-value: The new balance`                                   |
+| `lands_bank_withdraw`      | Triggered when withdrawing from the Lands bank         | Lands                              | `value: The value withdrawn`<br/>`alt-value: The new balance`                                   |
+| `lands_spawn_teleport`     | Triggered when teleporting to Lands spawn              | Lands                              | `value: 1`                                                                                      |
+| `gain_mcmmo_xp`            | Triggered when gaining McMMO xp                        | McMMO                              | `value: The xp gained`                                                                          |
+| `level_down_mcmmo`         | Triggered when levelling down McMMO skill              | McMMO                              | `value: The new level`                                                                          |
+| `level_up_mcmmo`           | Triggered when levelling up McMMO skill                | McMMO                              | `value: The new level`                                                                          |
+| `mcmmo_ability_activate`   | Triggered when an McMMO ability is activated           | McMMO                              | `value: 1`                                                                                      |
+| `mcmmo_ability_deactivate` | Triggered when an McMMO ability is deactivated         | McMMO                              | `value: 1`                                                                                      |
+| `scyther_auto_collect`     | Triggered when autocollecting crops with a scyther hoe | Scyther                            | `value: 1`                                                                                      |
+| `scyther_auto_sell`        | Triggered when autoselling crops with a scyther hoe    | Scyther                            | `value: 1`                                                                                      |
+| `register_vote`            | Triggered when a player votes for the server           | Votifier                           | `value: 1`                                                                                      |
+| `enter_region`             | Triggered when entering a region                       | WorldGuard                         | `value: 1`                                                                                      |
+| `leave_region`             | Triggered when leaving a region                        | WorldGuard                         | `value: 1`                                                                                      |
+| `claim_battlepass_reward`  | Triggered when claiming a battlepass reward            | xBattlepass                        | `value: 1`                                                                                      |
+| `complete_battlepass_task` | Triggered when completing a battlepass task            | xBattlepass                        | `value: 1`                                                                                      |
+| `gain_battlepass_xp`       | Triggered when gaining battlepass XP                   | xBattlepass                        | `value: The experience gained`                                                                  |
+| `tier_up_battlepass`       | Triggered when tiering up the battlepass               | xBattlepass                        | `value: The new level`                                                                          |
