@@ -35,7 +35,7 @@ The first item in the list will represent `1` in the pattern, the second item in
 
 This example has a surrounding layer of `gray_stained_glass_pane` and a center strip of `black_stained_glass_pane`.
 
-![Page](https://imgur.com/lyLo6pD)
+![Page](https://i.imgur.com/tQLXe3F.png)
 
 ## Custom GUI Slots
 ### What are custom GUI slots?

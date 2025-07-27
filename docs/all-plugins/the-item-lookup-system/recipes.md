@@ -28,4 +28,4 @@ the second three being the middle row (left to right), and the last three being 
 
 The example recipe would look like this in-game:
 
-![Recipe](https://imgur.com/a/26Z3f1R)
+![Recipe](https://i.imgur.com/lyLo6pD.png)
