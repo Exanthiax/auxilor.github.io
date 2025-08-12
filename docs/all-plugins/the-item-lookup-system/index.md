@@ -14,7 +14,8 @@ Anywhere you need to use items, you can use this system. To look up an item, you
 In each string is the key for an item. A key looks one of a few ways
 
 - A vanilla minecraft material ID: (e.g. `golden_apple`)
-- An item from another plugin: (e.g. `ecoitems:packmaster_tear`)
+- An item from another eco plugin: (e.g. `ecoitems:packmaster_tear`) 
+- An item from an external plugin: (e.g. `oraxen:alumite_pickaxe`), See [External Integrations](https://plugins.auxilor.io/all-plugins/the-item-lookup-system/external-integrations) for more info
 - An exact item NBT tag: (e.g. `{id:"stone",Count:3,tag:{Name:"your name"}}`)
 - An item tag: (e.g. `#talismans:talisman` or `#items_axes`)
 
@@ -63,26 +64,7 @@ tags:
 
 ### Using items from third-party plugins
 
-Sometimes custom item IDs are namespaced. In order to make this work, you have to specify them like `plugin:namespace__key`, where **two underscores** denote where the `:` would normally go.
-
-| Plugin     | Item Lookup Key                                                                                                                                      |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ItemsAdder | `itemsadder:<namespace>__<key>`, example below.                                                                                                      |
-| Oraxen     | `oraxen:<id>`, e.g. `oraxen:alumite_pickaxe`                                                                                                         |
-| ItemBridge | `itembridge:saved__<id>` for items you've saved within ItemBridge. You can use `itembridge:<prefix>__<id>` for plugin items supported in ItemBridge. |
-
-#### ItemsAdder
-
-```yaml
-# ** ItemsAdder configuration **
-info:
-  namespace: my_items
-items:
-  my_helmet:
-    display_name: "&9Custom Helmet"
-```
-
-ItemsAdder items are namespaced, so for example, the above would be `itemsadder:crystal_pack__alumite_pickaxe`, where `crystal_pack` is the namespace, and `alumite_pickaxe` is the item ID.
+Visit the [External Item Integrations](https://plugins.auxilor.io/all-plugins/the-item-lookup-system/external-integrations) page for more information on how to use items from third-party plugins.
 
 ## Modifiers
 
@@ -113,19 +95,4 @@ So, lets say you have an EcoMobs mob, and you want it to drop a rare custom weap
 
 ## Using eco plugin items in other plugins
 
-### MythicMobs
-If you want to use a lookup item in MythicMobs, just do it like this: `eco{type=<lookup_key>}`, e.g. `eco{type=ecoitems:<id>}`
-
-### ShopGUIPlus
-
-If you want to use a lookup item in ShopGUIPlus, just do it like this:
-
-```yaml
-type: item
-item:
-  eco: "ecoitems:holy_flesh"
-  quantity: 1
-sellPrice: 7500
-slot: 27
-```
-
+Visit the [External Item Integrations](https://plugins.auxilor.io/all-plugins/the-item-lookup-system/external-integrations) page for more information on how to use items within third-party plugins.
