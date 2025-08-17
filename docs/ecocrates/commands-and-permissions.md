@@ -13,7 +13,7 @@ All crates commands can be either `/crates`, `/crate`, or `/ecocrates`
 | `/crates give <player> <crate> [physical/physical] [amount]` | Gives a player a key                          | `ecocrates.command.give`             |
 | `/crates giveall <crate> [physical/physical] [amount]`       | Give all online players a key                 | `ecocrates.command.giveall`          |
 | `/crates take <player> <crate> [physical/physical] [amount]` | Takes a key from a player                     | `ecocrates.command.take`             |
-| `/crate keys`                                                | View your keys                                | `ecocrates.command.keys`             |
+| `/crates keys`                                               | View your keys                                | `ecocrates.command.keys`             |
 | `/crates preview <crate>`                                    | Open the preview for a crate                  | `ecocrates.command.preview`          |
 | `/crates open <crate> [player]`                              | Opens a crate virtually                       | `ecocrates.command.open`             |
 | `/crates forceopen <crate>`                                  | Force-opens a crate without a key             | `ecocrates.command.forceopen`        |
