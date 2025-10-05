@@ -17,10 +17,8 @@ Rolls happen whenever you open a crate. It's essentially an animation the player
 | `semi_instant` | [Video](https://youtu.be/ecsIdOLwSnU) |
 ## Rerolls
 
-Rerolls are a chance to get another reward - you can toggle this in crate config. The GUI is also completely customizable to your liking.
+If re-rolls are enabled in the crate config, after winning a reward, the player can choose to re-roll for another reward.
 
-[Rerolls](https://youtu.be/giDXQMwRsPU)
+You can watch a video on re-rolls [here](https://youtu.be/giDXQMwRsPU).
 
-You can make rerolls require a permission (`ecocrates.reroll.<crate>`) - it is given to all players by default, so negate the permission if you don't want a rank to be able to reroll.
-
-You have to enable rerolls in your crate config for rerolls to work at all.
+By default, all players can re-roll if it's enabled, but you can disable it for certain groups or players by negating the permission `ecocrates.reroll.<crate>`.

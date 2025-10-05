@@ -20,6 +20,7 @@ duration: 72000
 commands:
   activation: [ ]
   expiry: [ ]
+  increment: [ ]
   
 messages:
   activation:
@@ -31,6 +32,11 @@ messages:
     - ""
     - " &fThe &a2x Sell Multiplier Booster&f has ended"
     - " &fGet another one here: &ahttps://store.ecomc.net/package/756888"
+    - ""
+  increment:
+    - ""
+    - " %player%&f has extended the &a2x Sell Multiplier Booster&f!"
+    - " &fThis booster will now last another hour, be sure to thank them!"
     - ""
 
 gui:
@@ -71,6 +77,7 @@ duration: 72000 # The duration (in ticks) of the Booster. (e.g. 6000 = 5 minutes
 commands:
   activation: [ ] # Commands to run when the booster is activated.
   expiry: [ ] # Commands to run when the booster expires.
+  increment: [ ] # Commands to run when the booster is incremented (i.e. another one is activated whilst one is already active).
   
 messages:
   activation: # Broadcast message when the booster is activated.
@@ -82,6 +89,11 @@ messages:
     - ""
     - " &fThe &a2x Sell Multiplier Booster&f has ended"
     - " &fGet another one here: &ahttps://store.ecomc.net/package/756888"
+    - ""
+  increment: # Broadcast message when the booster is incremented (i.e. player activates another one).
+    - ""
+    - " %player%&f has extended the &a2x Sell Multiplier Booster&f!"
+    - " &fThis booster will now last another hour, be sure to thank them!"
     - ""
 ```
 

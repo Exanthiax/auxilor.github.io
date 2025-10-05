@@ -3,11 +3,11 @@ title: How to configure Rewards
 sidebar_position: 2
 ---
 
-## Default configs
-The default reward config can be found [here](https://github.com/Auxilor/EcoCrates/blob/master/eco-core/core-plugin/src/main/resources/rewards.yml).
+## How to create crate rewards
+Each reward goes into the `rewards.yml` file, located in the `/plugins/EcoCrates/` folder.
 
-## How to configure rewards
-Each reward goes into the `rewards.yml` file. From here you reference each one in your crates using the ID of the reward.
+The ID of the reward is what you use to reference it in your crates.
+ID's must be lowercase letters, numbers, and underscores only.
 
 ## Example Reward Config
 
@@ -33,32 +33,44 @@ Each reward goes into the `rewards.yml` file. From here you reference each one i
 
 ## Understanding all the sections
 
-**id:** The ID of the reward, used to add the reward to a crate
+### The Reward Object Section
 
-**commands:** Commands to be ran when the reward is won - use %player% for the player-name
+```yaml
+- id: 1000_coins # The ID of the reward
+  # Commands to be run when the reward is won, use %player% for the player name
+  commands:
+    - "eco give %player% 1000"
+  # The reward item, read more here: https://plugins.auxilor.io/all-plugins/the-item-lookup-system
+  items:
+    - paper 1 name:"&a$1000" glint
+  # Messages to be sent to the player when they win
+  messages:
+    - "Congratulations, you won $1000!"
+  max-wins: -1 # The max amount of times a player can win this reward, set to -1 to disable
+```
 
-**items:** A list of items to be given to the player when the reward is won, read here for more info: [Item Lookup System](https://plugins.auxilor.io/all-plugins/the-item-lookup-system).
+### The Reward Weight Section
 
-**messages:** The messages to be sent to the player when they win
+```yaml
+weight:
+  permission-multipliers: false # If permission chance multipliers should apply to this reward. Configure these in config.yml
+  actual: 10 # The actual chance of winning the reward
+  display: 25 # The chance of the reward showing up in crate animations
+```
 
-**max-wins:** The max amount of times a given player can win the reward, perfect for single-use rewards like giving particle effects. Set to -1 to disable
-#### Weight
+### The Reward Display Section
 
-**permission-multipliers:** If permission chance multipliers should apply to this reward
+```yaml
+display:
+  name: "&a$1000" # The display name of the reward
+  # The reward display item, read more here: https://plugins.auxilor.io/all-plugins/the-item-lookup-system
+  item: paper 1 glint
+  dont-keep-lore: false # (Optional) Set to true to only show custom lore
+  lore: # The custom lore to show in the display
+    - "&fDisplay Chance: &a%chance%%"
+    - "&fActual Chance: &a%actual_chance%%"
+```
 
-**actual:** The actual chance of winning the reward
-
-**display:** The chance of the reward showing up in crate animations - this allows you to rig crates however you want, for example making a rare (or even unwinnable) item appear common, or vice versa. Both actual and display weight let you use PAPI placeholders to calculate them, for example `%player_y%`, if you want the chance to depend on a placeholder - very useful if you're basing it off of wins, ranks, or whatever - this supports mathematical expressions too, like when configuring an effect in my other plugins
-
-#### Display
-
-**name:** The name of the reward
-
-**item:** The item to be shown in animations and previews, read here for more info: [Item Lookup System](https://plugins.auxilor.io/all-plugins/the-item-lookup-system).
-
-**dont-keep-lore:** (Optional) Set to true to only show custom lore.
-
-**lore:** The lore of the item.
 ## Internal Placeholders
 
 | Placeholder       | Value                       |
@@ -66,4 +78,7 @@ Each reward goes into the `rewards.yml` file. From here you reference each one i
 | `%chance%`        | The reward's display chance |
 | `%actual_chance%` | The reward's actual chance  |
 
+<hr/>
 
+## Default configs
+The default reward config can be found [here](https://github.com/Auxilor/EcoCrates/blob/master/eco-core/core-plugin/src/main/resources/rewards.yml).

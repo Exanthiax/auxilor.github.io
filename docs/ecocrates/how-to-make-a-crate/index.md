@@ -150,7 +150,7 @@ pay-to-open: # If people can pay to open if they have no keys
   price: 5000 # The price to buy the crate
 ```
 
-The list of roll animations can be found [here](https://plugins.auxilor.io/ecocrates/how-to-make-a-crate/roll-animations)
+To learn about re-rolls and crate animations, [read here](https://plugins.auxilor.io/ecocrates/how-to-make-a-crate/roll-animations).
 
 ### The Preview GUI Section
 
