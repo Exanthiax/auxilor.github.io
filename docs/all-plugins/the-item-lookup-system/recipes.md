@@ -29,3 +29,10 @@ the second three being the middle row (left to right), and the last three being 
 The example recipe would look like this in-game:
 
 ![Recipe](https://i.imgur.com/lyLo6pD.png)
+
+:::dangerKnown Issue
+There is a display issue where only vanilla items are shown in the recipe book, and heads use the default texture. However, the recipes still work correctly.
+This is a Minecraft/Server limitation due to how custom items are handled. There was events of servers crashing and corrupting chunks when displaying custom items in recipes.
+
+This may be fixed in a future version if possible.
+:::
